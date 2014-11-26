@@ -1,0 +1,54 @@
+/**
+ * Created by Travis on 2014/11/20.
+ */
+var app = app || {};
+(function ($) {
+    app.TransferView = Backbone.View.extend({
+        el: '#transfer',
+        selected: null,
+        events: {
+            'click #transfer-confirm': 'transfer'
+        },
+        initialize: function () {
+            //console.log("transfer view init");
+        },
+        beginRefresh: function () {
+            var that = this;
+            that.refreshStep = 1;
+            return app.Lock.attach({
+//                loading: this.$('#transfer-buttons'),
+                error: function (data) {
+                    app.showMessageBar('#transfer-message', data.err, 'error');
+                },
+                success: function (data) {
+                    that.refreshUser(data);
+                }
+            });
+        },
+        transfer: function() {
+            var name = this.$el.find('#transfer-inputName').val();
+
+            if (name == '') {
+                app.showMessageBar('#transfer-message', 'inputusername', 'error');
+
+            } else if (this.beginRefresh()) {
+                app.socket.emit('changeOwner', {
+//                    path: this.shareModel.get('path'),
+                    path: this.collection.path,
+                    name: name
+                });
+            }
+            this.$('#transfer-inputName').val('').focus();
+        }
+    });
+    app.init || (app.init = {});
+    app.init.transferView = function () {
+        if (app.views['transfer']) {
+            return;
+        }
+        app.collections['transfer'] || app.init.shares();
+        app.views['transfer'] = new app.TransferView({
+            collection: app.collections['transfer']
+        });
+    };
+})();
