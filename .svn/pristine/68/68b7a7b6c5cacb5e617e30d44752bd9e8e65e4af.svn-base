@@ -1,0 +1,90 @@
+module.exports = ProjectDAO;
+var db = require('./db.js');
+var Lock = require('./lock.js');
+var UserDAO = require('./userDAO');
+var DocDAO = require('./docDAO');
+
+var lock = new Lock();
+var userDAO = new UserDAO();
+var docDAO = new DocDAO();
+
+var hashValue = 'woshishabi_';
+
+function ProjectDAO(){
+	if(!(this instanceof ProjectDAO)){
+		return new ProjectDAO();
+	}
+	this.innerError = false;
+}
+
+ProjectDAO.prototype.createProject = function (name, userId, introduction, callback){
+	lock.acquire(hashValue + name, function()}{
+		db.user.findOne({
+			_id:userId
+		}, function (err, user){
+			if (err){
+				lock.release(hashValue + name);
+				return callback('inner error');
+			}
+			if (!user){
+				lock.release(hashValue + name);
+				return callback('invalid user id');
+			}
+			db.project.findOne({
+				name:name
+			}, function (err, project){
+				if (err){
+					lock.release(hashValue + name);
+					return callback('inner error');
+				}
+				if (project){
+					lock.release(hashValue + name);
+					return callback('project exsits');
+				}
+				db.project.insert({
+					name:name, 
+					ownerId:userId, 
+					members:[], 
+					introduction:introduction, 
+					createTime:new Date().getTime()
+				}, function (err, newProject){
+					if (err){
+						lock.release(hashValue + name);
+						return callback('inner error');
+					}
+					if (!newProject){
+						lock.release(hashValue + name);
+						return callback('inner error');
+					}
+					db.user.update({
+						_id:userId
+					}, {
+						$push:{
+							projects:newProject._id
+						}
+					}, function (err, reply){
+						if (err){
+							lock.release(hashValue + name);
+							return callback('inner error');
+						}
+						db.projectRecord.insert({
+							projectId:newProject._id, 
+							userId:userId, 
+							modifyTime:new Date().getTime(), 
+							type:'create'
+						}, function (err, newProjectRecord){
+							if (err){
+								lock.release(hashValue + name);
+								return callback('inner error');
+							}
+							else{
+								lock.release(hashValue + name);
+								return callback(null, newProject.createTime, newProject._id);
+							}
+						});
+					});
+				});
+			});
+		});
+	});
+};

@@ -95,7 +95,7 @@ var app = app || {};
         },
         /*离开编程页面*/
         closeeditor: function () {
-			//console.log(app.room.docData.id);
+			//console.log(app.room.docData);
 	        var currentTime = new Date();
 	        var time = currentTime.getFullYear() + ',' + (currentTime.getMonth() + 1) + ',' + currentTime.getDate() + ',' + currentTime.getHours() + ',' +currentTime.getMinutes();
 			app.socket.emit('saveStatistics', {/*docId:app.room.docData.id, */isOwner:app.room.isOwner, modifyTime: time});
@@ -472,7 +472,7 @@ var app = app || {};
             return i != this.cover.length && (this.cover[i].from <= line);
         },
 
-        // 添加注释块
+        // 添加批注段
         addCommentBlock: function (cm, up) {
             var curLine = cm.getCursor().line;
             if (this.inCommentRange(curLine)) return;
@@ -481,10 +481,10 @@ var app = app || {};
             var indent = Array(cm.getOption("indentUnit") + 1).join(" ");
 //            this.clearTextMarker(curLine, curLine);
             cm.replaceRange((up ? "" : "\n")
-                + indent + "/**" + "\n"
-                + indent + " * @author " + app.currentUser.name + "\n"
-                + indent + " * \n"
-                + indent + "**/"
+                + indent + "<--    " + "\n"
+                + indent + " - @author " + app.currentUser.name + "\n"
+                + indent + " - \n"
+                + indent + "-->"
                 + (up ? "\n" : ""), {line: curLine, ch: up ? 0 : text.length});
             cm.addLineClass(curLine + 1, "background", "comment");
             cm.addLineClass(curLine + 2, "background", "comment");
@@ -515,11 +515,53 @@ var app = app || {};
         updateCommentArea: function (chg) {
 
             if (chg != null && (chg.text.length > 1 || chg.removed.length > 1)) {
-                this.room.calcCommentArea(this.editor.getDoc().getValue());
+                this.room.calcCommentArea(this.editor.getDoc().getValue(), this.getTheme());
             }
         },
 
-        // 把原本的注释段标注出
+        //创建一个批注DOM对象
+        newNoteElement: function (cm, l, index, type) {
+            var view = this;
+            var elem;
+            if (type == "comment-mode") {
+                elem = $('<span class="delete-comment-btn">'+
+                    'Click Here to Delete This Comment Block' +
+                    '</span>');
+                elem.click(function (event) {
+                    view.removeCommentBlock(cm, index);
+                });
+                cm.setBookmark({line:l, ch:8}, elem[0] ,{});
+            } else {
+                // under edit mode
+
+                elem = $('<span class="confirm-note-btn">'+
+                    'Confirm' +
+                    '</span>');
+                elem.click(function (event) {
+
+                    var line = view.editor.getLine(view.cover[index].from + 1);
+                    console.log(line);
+                    var name = line.split("@author ").pop();
+                    if (name != "") {
+                        app.socket.emit('addNote', {name: name});
+                    }
+
+                    view.removeCommentBlock(cm, index);
+                });
+                cm.setBookmark({line:l, ch:8}, elem[0] ,{});
+                var elem1;
+                elem1 = $('<span class="cancel-note-btn">'+
+                    'Cancel' +
+                    '</span>');
+                elem1.click(function (event) {
+                    view.removeCommentBlock(cm, index);
+                    console.log("Cancel");
+                });
+                cm.setBookmark({line:l, ch:11}, elem1[0] ,{});
+            }
+        },
+
+        // 把原本的批注段标注出
         setCommentArea: function (commentArea) {
             this.cover = [];
             var view = this;
@@ -528,24 +570,16 @@ var app = app || {};
             }
 
             var cm = this.editor;
-            if(this.getTheme()== 'comment-mode'){
-                for(var i = 0; i < commentArea.length - 1; i = i + 2) {
-                    var bm = $('<span class="delete-comment-btn">'+
-                        'Click Here to Delete This Comment Block' +
-                        '</span>');
-                    (function (index) {
-                        bm.click(function(event){
-                            view.removeCommentBlock(cm, index);
-                        });
-                    })(i / 2);
-                    cm.setBookmark({line:commentArea[i] - 1, ch:15}, bm[0] ,{});
+            if(this.getTheme()== 'view-mode'){
+                return;
+            }
+            for(var i = 0; i < commentArea.length - 1; i = i + 2) {
+                this.newNoteElement(cm, commentArea[i] - 1, i / 2, this.getTheme());
 
-                    for(var j = commentArea[i] - 1; j <= commentArea[i + 1] - 1;j++)
-                    {
-                        cm.addLineClass(j, "background", "comment");
-                    }
+                for(var j = commentArea[i] - 1; j <= commentArea[i + 1] - 1;j++)
+                {
+                    cm.addLineClass(j, "background", "comment");
                 }
-//                this.renderDeleteWidgets();
             }
         },
 
@@ -610,7 +644,7 @@ var app = app || {};
         },
 
         // 设置编辑器的可编辑模式
-        setTheme: function (theme) {
+        setTheme: function (theme, isMember) {
             var cm = this.editor;
             switch (theme) {
                 case 'edit-mode': // 完全编辑模式
@@ -626,6 +660,10 @@ var app = app || {};
                     this.setBackgroundColor('white');
                     break;
                 case 'view-mode': // 观察模式
+                    this.setBackgroundColor('gray');
+                    if (!isMember) {
+                        break;
+                    }
                     $('#mode-switch').show();
                     $('#mode-switch').children(0).addClass('glyphicon-pencil').removeClass('glyphicon-file');
                     this.removeCommentArea();
@@ -637,7 +675,6 @@ var app = app || {};
 
                         }
                     });
-                    this.setBackgroundColor('gray');
                     break;
                 case 'comment-mode':  // 可注释模式
                     $('#mode-switch').show();

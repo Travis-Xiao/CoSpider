@@ -81,29 +81,41 @@ var app = app || {};
         },
 
         /* 视图模式转换 */
-        changeMode: function (isOwner) {
-            if (isOwner) {
-                //console.log("Yes");
+        changeMode: function (result) {
+			this.permission = result;
+            if (result.isOwner) {
                 this.isOwner = true;
                 this.view.setTheme("edit-mode");
             }
             else{
-                //console.log("No");
                 this.isOwner = false;
-                this.view.setTheme("view-mode");
+                this.view.setTheme("view-mode", result.isMember);
             }
         } ,
 
         /* 获取可编辑区域 */
-        calcCommentArea: function (content){
+        calcCommentArea: function (content, mode){
             //console.log(content);
             var line = 1;
             var begin = -1;
             var author;
-            var result = [];
+            var editArea = [];
+			var noteArea = [];
             var j = 0;
+			var k = 0;
+			var p = -1;
 
             for (var i = 0; i < content.length; i++){
+				if (content.substring(i, i + 1) == "/*")
+					p = i;
+				if (content.substring(i, i + 1) == "*/")
+					p = -1;
+				if (content.substring(i, i + 1) == "//"){
+					while (content[i] != "\n")
+						i++;
+					line ++;
+					continue;
+				}
                 if (content[i] == '\\' && content[i + 1] == 'n'){
                     i ++;
                     continue;
@@ -112,14 +124,18 @@ var app = app || {};
                     line ++;
                     continue;
                 }
-                if (content.substring(i, i + 3) == "/**"){
+				if (p != -1)
+					continue;
+                if (content.substring(i, i + 3) == "<--"){
                     begin = line;
                     continue;
                 }
-                if (content.substring(i ,i + 3) == "**/"){
+                if (content.substring(i ,i + 3) == "-->"){
+					noteArea[k++] = begin;
+					noteArea[k++] = line;
                     if (app.currentUser.name == author){
-                        result[j++] = begin;
-                        result[j++] = line;
+                        editArea[j++] = begin;
+                        editArea[j++] = line;
                     }
                     begin = -1;
                     continue;
@@ -135,9 +151,11 @@ var app = app || {};
                     }
                 }
             }
-
-//            console.log(result);
-            this.view.setCommentArea(result);
+			
+			if (mode == "edit-mode")
+				this.view.setCommentArea(noteArea);
+            else
+				this.view.setCommentArea(editArea);
         },
 
         /* 向服务器请求更新buffer*/
@@ -148,6 +166,9 @@ var app = app || {};
 
         /* 进入房间处理初始化 */
         onSet: function(data) {
+
+            console.log("on set");
+            console.log(data);
 
             app.Lock.remove();
             data.notRemove = true;

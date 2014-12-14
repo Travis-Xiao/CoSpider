@@ -34,7 +34,6 @@ var onLogin = function(data) {
 		app.Lock.remove(); 
 		return; 
 	}
-  
 	app.Lock.removeLoading();
 	if (data.err) {
 		app.isLogined = false;
@@ -44,33 +43,22 @@ var onLogin = function(data) {
     	app.Lock.detach(data);
 	} else {
 		$.cookie('sid', data.sid, {expires: 7});
-    	
+
 		data.user.owner = data.user.online = true;
 		app.currentUser = data.user;
-
-    	/*更新页面*/
-		app.views['account'].show();
-		app.views.files.afterLogin();
-
-		/*更新URL*/
 		app.isLogined = true;
-		window.location.href = '#index//';
+        data.projects.forEach(function(project){
+            app.collections['projects'].add(project);
+        });
+		window.location.href = '#projects';
 
-		/*更新文件列表*/
 		app.Lock.detach(data);
-		app.collections['files'].fetch({
-			path: '/' + data.user.name,
-			success: function() { 
-				app.views['files'].renewList(); 
-			},
-			virtual: true,
-    	});
-    	
-    	/*释放资源*/
-	    data.doc = data.user;
-		delete data.user;
+
+
+		data.projects = data.user;
+		delete  data.user;
 		app.Lock.detach(data);
-		delete data.doc.docs;
+		delete data.projects;
 	}
 };
 
@@ -117,6 +105,24 @@ var onDownzip = function(data) {
 	document.getElementById('downloada').dispatchEvent(evt);
 };
 
+/* 处理进入项目主页事件监听 */
+var onIntoProject = function (data) {
+	window.location.href = '#index//';
+    app.views['files'].afterIntoProject(data.project.name);
+
+    app.collections['files'].fetch({
+        path: '/'+data.project.name,
+        success: function() {
+        },
+        virtual: true,
+    });
+
+    data.doc = data.project;
+    delete data.project;
+    app.Lock.detach(data);
+    delete data.doc.docs;
+};
+
 app.init_suf || (app.init_suf = {});
 
 /* 初始化socket逻辑事件监听 */
@@ -130,6 +136,7 @@ app.init_suf || (app.init_suf = {});
     	socket.on('disconnect', function() { app.isLogined = false; } );
     	socket.on('version', onVersion);
     	socket.on('login', onLogin);
+		socket.on('into-project', onIntoProject);
 	};
 	
 	var _init = false;

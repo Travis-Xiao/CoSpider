@@ -1,0 +1,2427 @@
+js-bson: Failed to load c++ bson extension, using pure JS version
+
+[2014/10/4 03:02:22]
+server start
+js-bson: Failed to load c++ bson extension, using pure JS version
+
+[2014/10/4 03:12:11]
+server start
+
+[2014/10/4 03:14:24]
+server stop
+js-bson: Failed to load c++ bson extension, using pure JS version
+
+[2014/10/4 03:14:24]
+server start
+
+[2014/10/4 03:24:47]
+server start
+
+[2014/10/4 03:24:47]
+uncaughtException: Error: listen EADDRINUSE
+
+[2014/10/4 03:41:50]
+server start
+
+[2014/10/4 03:41:51]
+uncaughtException: Error: listen EADDRINUSE
+
+[2014/10/4 11:15:14]
+server start
+
+[2014/10/4 11:32:00]
+server stop
+
+[2014/10/4 11:32:00]
+server start
+
+[2014/10/4 11:39:56]
+server start
+
+[2014/10/4 11:47:41]
+server stop
+
+[2014/10/4 11:47:41]
+server start
+
+[2014/10/4 11:49:28]
+server stop
+
+[2014/10/4 11:49:28]
+server start
+
+[2014/10/4 11:50:48]
+server stop
+
+[2014/10/4 11:50:48]
+server start
+
+[2014/10/4 11:51:07]
+server stop
+
+[2014/10/4 11:51:08]
+server start
+
+[2014/10/4 11:52:16]
+server stop
+
+[2014/10/4 12:33:17]
+server start
+
+[2014/10/4 12:35:20]
+server stop
+
+[2014/10/4 12:35:20]
+server start
+
+[2014/10/4 12:40:43]
+server stop
+
+[2014/10/4 12:45:54]
+server start
+
+[2014/10/4 13:41:05]
+server stop
+
+[2014/10/4 13:41:45]
+server start
+
+[2014/10/4 13:44:45]
+server stop
+
+[2014/10/4 13:44:45]
+server start
+
+[2014/10/4 21:43:38]
+server start
+
+[2014/10/4 21:47:05]
+server stop
+
+[2014/10/4 21:47:05]
+server start
+
+[2014/10/4 21:49:53]
+server stop
+
+[2014/10/4 23:14:01]
+server start
+
+[2014/10/4 23:20:01]
+server stop
+
+[2014/10/4 23:20:01]
+server start
+
+[2014/10/4 23:35:51]
+server stop
+
+[2014/10/4 23:35:52]
+server start
+
+[2014/10/4 23:35:57]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/4 23:38:31]
+server stop
+
+[2014/10/4 23:39:01]
+server start
+
+[2014/10/4 23:42:12]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/4 23:44:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:44:59]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/4 23:44:59]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/4 23:45:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/4 23:45:20]
+server stop
+
+[2014/10/5 12:18:51]
+server start
+
+[2014/10/5 12:19:53]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 15:09:41]
+server start
+
+[2014/10/5 15:11:07]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 15:11:09]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 15:12:55]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 16:57:09]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 16:59:08]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:00:41]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:00:43]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:01:43]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:01:50]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:02:14]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:02:44]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:06:58]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:07:32]
+[undefined] connect "socket begin"
+
+[2014/10/5 17:09:56]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 17:26:05]
+[undefined] connect "socket begin"
+
+[2014/10/5 17:26:08]
+[undefined] connect "socket begin"
+
+[2014/10/5 18:03:03]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:03:38]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:03:40]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:07:07]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:07:38]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:18:37]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:24:36]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:27:52]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:28:42]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:33:27]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:53:00]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 18:58:47]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:04:22]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:12:19]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:16:25]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:17:51]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:18:26]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:27:12]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:27:22]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:27:46]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:29:00]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:29:52]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:31:26]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:31:34]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:31:38]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:32:55]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:33:46]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:33:49]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:33:54]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:34:16]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/5 19:35:23]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:10:07]
+server start
+
+[2014/10/7 19:11:33]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:14:32]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:14:33]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:19:45]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:20:32]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:20:36]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:21:02]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:50:33]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:51:23]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:51:27]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:52:17]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:53:51]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:57:01]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:57:02]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:57:40]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/7 19:57:41]
+[127.0.0.1] connect "socket begin"
+                                                                                                                                                                              
+[2014/10/22 08:30:14]
+server start
+
+[2014/10/22 09:10:01]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/22 12:39:45]
+server stop
+
+[2014/10/23 07:42:04]
+server start
+
+[2014/10/23 07:43:18]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 08:21:46]
+[undefined] connect "socket begin"
+
+[2014/10/23 08:21:52]
+[undefined] connect "socket begin"
+
+[2014/10/23 08:21:54]
+[undefined] connect "socket begin"
+
+[2014/10/23 08:21:55]
+[undefined] connect "socket begin"
+
+[2014/10/23 09:54:17]
+server start
+
+[2014/10/23 10:07:38]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 10:07:42]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 10:13:15]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 10:13:16]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 10:13:32]
+[undefined] connect "socket begin"
+
+[2014/10/23 10:13:34]
+[undefined] connect "socket begin"
+
+[2014/10/23 10:42:44]
+server start
+
+[2014/10/23 10:54:41]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 10:54:55]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 11:28:12]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 13:00:20]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/23 13:02:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/23 13:02:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/23 13:02:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/23 13:02:44]
+server stop
+
+[2014/10/24 07:50:35]
+server start
+
+[2014/10/24 07:53:02]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/26 20:04:18]
+server start
+
+[2014/10/30 19:39:05]
+server start
+
+[2014/10/30 20:06:22]
+[undefined] connect "socket begin"
+
+[2014/10/30 20:08:33]
+[127.0.0.1] connect "socket begin"
+
+[2014/10/30 22:28:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/30 22:28:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/30 22:28:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/30 22:28:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/30 22:28:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/30 22:28:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/30 22:28:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/10/30 22:28:22]
+server stop
+
+[2014/11/6 13:02:28]
+server start
+
+[2014/11/6 13:05:11]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/6 13:11:37]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/6 13:11:38]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/6 13:12:04]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/6 13:17:06]
+[undefined] connect "socket begin"
+
+[2014/11/6 19:15:58]
+server start
+
+[2014/11/8 14:14:49]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/8 14:15:36]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/8 14:15:39]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/8 14:19:47]
+[127.0.0.1] connect "socket begin"
+
+[2014/11/8 15:35:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:35:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:36:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:37:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:38:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:39:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:40:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:41:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:42:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:43:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:44]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:44:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:04]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:05]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:06]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:07]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:08]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:09]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:10]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:11]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:12]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:13]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:14]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:15]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:16]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:17]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:18]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:19]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:20]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:21]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:22]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:23]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:24]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:25]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:26]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:27]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:28]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:29]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:30]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:31]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:32]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:33]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:34]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:35]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:36]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:37]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:38]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:39]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:40]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:41]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:42]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:43]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:45]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:46]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:47]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:48]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:49]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:50]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:51]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:52]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:53]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:54]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:55]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:56]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:57]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:58]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:45:59]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:46:00]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:46:01]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:46:02]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:46:03]
+uncaughtException: Error: failed to connect to [localhost:27017]
+
+[2014/11/8 15:46:04]
+uncaughtException: Error: failed to connect to [localhost:27017]

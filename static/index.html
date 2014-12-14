@@ -149,8 +149,8 @@
     </div>
     <div class="main-body">
       <div id="filecontrol" class="hide">
-				<div class="row">
-					<div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
             <ul class="nav nav-tabs">
               <li class="dropdown" id="ownedfile">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span localization>owningfiles</span><b class="caret"></b></a>
@@ -184,27 +184,27 @@
                 <th class="col5">&nbsp;</th>
               </tr>
               <tr id="no-file"><td></td><td localization>nofile</td> <td></td> <td></td> <td></td></tr>
-<script type="text/template" id="file-template">
-<td class="col1"><img src="<%=model.pic%>" height="32" width="32" /></td>
-<td class="col2"><a href="#index<%=encodeURI(model.shownPath)%>" class="file-go"><%=_.escape(model.shownName)%></a></td>
-<% if (model.belongSelf) { %>
-<td class="col3" localization><%=model.shared?strings["shared"]:""%></td>
-<% } else { var o = model.owner; %>
-<td class="col3 owner"><img class="user-other" src="<%=o.avatar%>" width="32" height="32"/><%=_.escape(o.name)%></td>
-<% } %>
-<td class="col4"><%=model.time%></td>
-<td class="col5">
-  <div class="dropdown">
-    <a href="#" class="dropdown-toggle<%=model.belongSelf ? "" : " disabled"%> opreation" data-toggle="dropdown">&nbsp;</a>
-    <ul class="dropdown-menu">
-      <% if(model.inRoot) { %><li><a href="#" class="file-go-share" localization><%=strings["sharemanage"]%></a></li> <% } %>
-      <li><a href="#" class="file-go-delete" localization><%=strings["delete"]%></a></li>
-      <li><a href="#" class="file-go-rename" localization><%=strings["rename"]%></a></li>
-      <li><a href="#" class="file-go-download" localization><%=strings["download"]%></a></li>
-      <li><a href="#" class="file-go-transfer" localization><%=strings["transfer"]%></a></li>
-    </ul>
-  </div>
-</td></script>
+                <script type="text/template" id="file-template">
+                <td class="col1"><img src="<%=model.pic%>" height="32" width="32" /></td>
+                <td class="col2"><a href="#index<%=encodeURI(model.shownPath)%>" class="file-go"><%=_.escape(model.shownName)%></a></td>
+                <% if (model.belongSelf) { %>
+                <td class="col3" localization><%=model.shared?strings["shared"]:""%></td>
+                <% } else { var o = model.owner; %>
+                <td class="col3 owner"><img class="user-other" src="<%=o.avatar%>" width="32" height="32"/><%=_.escape(o.name)%></td>
+                <% } %>
+                <td class="col4"><%=model.time%></td>
+                <td class="col5">
+                  <div class="dropdown">
+                    <a href="#" class="dropdown-toggle opreation" data-toggle="dropdown">&nbsp;</a>
+                    <ul class="dropdown-menu">
+                      <% if(model.inRoot) { %><li><a href="#" class="file-go-share" localization><%=strings["sharemanage"]%></a></li> <% } %>
+                      <li><a href="#" class="file-go-delete" localization><%=strings["delete"]%></a></li>
+                      <li><a href="#" class="file-go-rename" localization><%=strings["rename"]%></a></li>
+                      <li><a href="#" class="file-go-download" localization><%=strings["download"]%></a></li>
+                      <li><a href="#" class="file-go-transfer" localization><%=strings["transfer"]%></a></li>
+                    </ul>
+                  </div>
+                </td></script>
             </table>
           </div>
           <div class="col-xs-2">
@@ -214,6 +214,40 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div id="projects" class="hide">
+          <table id="projects-table"></table>
+          <script type="text/template" id="project-template">
+              <%if (model.notnew) {%>
+              <div class="project-cover">
+              <%} else {%>
+              <div class="project-cover create-project">
+              <%}%>
+                  <div>
+                      <h2 class="project-name"><%=model.name%></h2>
+                  </div>
+              </div>
+              <div class="detail hide">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h3 id="shareLabel" localization>Project Info</h3>
+                  </div>
+                  <div class="input-group">
+                      <input type="text" class="project-inputName">
+                  </div>
+                  <div>
+                      <h3 id="shareLabel" localization>Project Intro</h3>
+                      <textarea class="project-info">
+                          <%=model.info%>
+                      </textarea>
+                  </div>
+                  <div class="col-xs-3">
+                      <button class="btn pull-right btn-primary" type="button" class="info-confirm" localization="">Confirm</button>
+                  </div>
+              </div>
+          </script>
+
       </div>
     
       <div id="editor" class="row hide">
@@ -309,7 +343,38 @@
       </div>
 
 
+        <div id="newproject" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="newproject-label" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3 id="newproject-label" localization>newproject</h3>
+                    </div>
+                    <div class="modal-body form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="newproject-name" localization>name</label>
+                            <div class="col-sm-7">
+                                <input class="modal-input form-control" type="text" id="newproject-name" />
+                                <span class="help-inline"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="newproject-info" localization>introduction</label>
+                            <div class="col-sm-7">
+                                <input class="modal-input form-control" type="text" id="newproject-info" />
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="modal-buttons">
+                            <button class="btn btn-primary modal-confirm" localization>ok</button>
+                            <button class="btn" data-dismiss="modal" aria-hidden="true" localization>cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     
     <!-- popover -->
     <div id="newfile" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="newfile-label" aria-hidden="true" data-backdrop="static">
@@ -617,11 +682,14 @@
   <script type="text/javascript" src="js/models/file.js"></script>
   <script type="text/javascript" src="js/models/user.js"></script>
   <script type="text/javascript" src="js/models/expression.js"></script>
+  <script type="text/javascript" src="js/models/project.js"></script>
   <script type="text/javascript" src="js/collections/files.js"></script>
   <script type="text/javascript" src="js/collections/members.js"></script>
   <script type="text/javascript" src="js/collections/expressions.js"></script>
+  <script type="text/javascript" src="js/collections/projects.js"></script>
   <script type="text/javascript" src="js/sockets/main-socket.js"></script>
   <script type="text/javascript" src="js/sockets/file-sync.js"></script>
+  <script type="text/javascript" src="js/sockets/project-sync.js"></script>
   <script type="text/javascript" src="js/sockets/room-socket.js"></script>
   <script type="text/javascript" src="js/views/login-view.js"></script>
   <script type="text/javascript" src="js/views/register-view.js"></script>
@@ -630,6 +698,8 @@
   <script type="text/javascript" src="js/views/memberlist-view.js"></script>
   <script type="text/javascript" src="js/views/sharer-view.js"></script>
   <script type="text/javascript" src="js/views/sharerlist-view.js"></script>
+  <script type="text/javascript" src="js/views/projects-view.js"></script>
+  <script type="text/javascript" src="js/views/projectinfo-view.js"></script>
   <script type="text/javascript" src="js/views/transfer-view.js"></script>
   <script type="text/javascript" src="js/views/timeline-view.js"></script>
   <script type="text/javascript" src="js/views/file-view.js"></script>

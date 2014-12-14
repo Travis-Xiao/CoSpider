@@ -6,6 +6,8 @@ var UserDAO = require('./userDAO');
 var lock = new Lock();
 var userDAO = new UserDAO();
 
+var that = this;
+
 function DocDAO(){
 	if(!(this instanceof DocDAO)){
 		return new DocDAO();
@@ -30,59 +32,9 @@ function DocDAO(){
 			}
 		});
 	}
-	
-	this.setNames = function(i, date, records, callback){
-		if (i < 0)
-			return callback(null, date);
-		
-		db.user.findOne({_id:records[i].userId}, {name:1}, function (err, user){
-			//console.log(user);
-			if (err)
-				return callback("inner error");
-			if (!user)
-				return callback("inner error");
-				
-			date[i] = {};
-			date[i].startDate = records[i].modifyTime;
-			date[i].asset = {};
-			if (i == 0){
-				date[i].headline = "Create";
-				date[i].text = "By " + user.name;
-			}
-			else{
-				if (records[i].type == "modify"){
-					date[i].headline = "Modify";
-					date[i].text = records[i].modifyCode + " codes, " + records[i].modifyComment + " comments by " + user.name;
-				}
-				if (records[i].type == "share"){
-					date[i].headline = "Share";
-					date[i].text = user.name;
-					userDAO.getNameById(records[i].toUserId, function (err, toUser){
-						if (err)
-							return callback("inner error");
-						date[i].text = date[i].text + " shared this file to " + toUser.name;
-						that.setNames(i - 1, date, records, callback);
-					});
-					return;
-				}
-				if (records[i].type == "transfer"){
-					date[i].headline = "Transfer";
-					date[i].text = user.name;
-					userDAO.getNameById(records[i].toUserId, function (err, toUser){
-						if (err)
-							return callback("inner error");
-						date[i].text = date[i].text + " transferred this file to " + toUser.name;
-						that.setNames(i - 1, date, records, callback);
-					});
-					return;
-				}
-			}
-			that.setNames(i - 1, date, records, callback);
-		});
-	};
 }
 
-DocDAO.prototype.createDoc = function(userId, path, type, callback){
+DocDAO.prototype.createDoc = function(userId, path, type, projectId, callback){
 	var that = this;
 	var reg = /^\/[a-zA-Z0-9]+((\/[^.\/@\\]+[^@\/\\]*[^.\/@\\]+)|(\/[^.\/@\\]))+$/
 	if((!reg.test(path) || (path.substring(path.lastIndexOf("/")).length > 33))){
@@ -102,11 +54,6 @@ DocDAO.prototype.createDoc = function(userId, path, type, callback){
 				return callback("invalid user id");
 			}
 
-			if(reply.name != paths[1]){
-				lock.release(rootPath);
-				return callback("unauthorize");
-			}
-
 			db.doc.findOne({path:path}, {_id:1}, function(err, doc){
 				if(err){
 					lock.release(rootPath);
@@ -120,20 +67,20 @@ DocDAO.prototype.createDoc = function(userId, path, type, callback){
 					if(paths.length == 3){
 						if(type == "dir"){
 							var cTime = new Date().getTime();
-							db.doc.insert({path:path, type:"dir", owner:userId, members:[], docs:[], permission:"private", createTime:cTime, modifyTime:cTime}, function(err, newDir){
+							db.doc.insert({path:path, type:"dir", owner:userId, members:[], docs:[], permission:"private", createTime:cTime, modifyTime:cTime, projectId:projectId}, function(err, newDir){
 								if(err){
 									lock.release(rootPath);
 									return callback("inner error");
 								}
 								else{
-									db.user.update({_id:userId}, {$push:{docs:newDir[0]._id}}, function(err, reply){
+									db.user.update({_id:userId}, {$push:{docs:newDir._id}}, function(err, reply){
 										if(err){
 											lock.release(rootPath);
 											return callback("inner error");
 										}
 										else{
 											lock.release(rootPath);
-											return callback(null, newDir[0].createTime, null);
+											return callback(null, newDir.createTime, null);
 										}
 									});
 								}
@@ -141,20 +88,20 @@ DocDAO.prototype.createDoc = function(userId, path, type, callback){
 						}
 						else{
 							var cTime = new Date().getTime();
-							db.doc.insert({path:path, type:"doc", owner:userId, members:[], revisions:[], permission:"private", createTime:cTime, modifyTime:cTime}, function(err, newDoc){
+							db.doc.insert({path:path, type:"doc", owner:userId, members:[], revisions:[], permission:"private", createTime:cTime, modifyTime:cTime, projectId:projectId}, function(err, newDoc){
 								if(err){
 									lock.release(rootPath);
 									return callback("inner error");
 								}
 								else{
-									db.user.update({_id:userId}, {$push:{docs:newDoc[0]._id}}, function(err, reply){
+									db.user.update({_id:userId}, {$push:{docs:newDoc._id}}, function(err, reply){
 										if(err){
 											lock.release(rootPath);
 											return callback("inner error");
 										}
 										else{
 											db.revision.insert({
-												doc:newDoc[0]._id,
+												doc:newDoc._id,
 												revision:1,
 												createTime:new Date().getTime(),
 												creater:userId,
@@ -167,14 +114,14 @@ DocDAO.prototype.createDoc = function(userId, path, type, callback){
 													return callback("inner error");
 												}
 												else{
-													db.doc.update({_id:newDoc[0]._id}, {$push:{revisions:revision[0]._id}}, function(err, reply){
+													db.doc.update({_id:newDoc._id}, {$push:{revisions:revision._id}}, function(err, reply){
 														if(err){
 															lock.release(rootPath);
 															return callback("inner error");
 														}
 														else{
 															lock.release(rootPath);
-                              return callback(null, newDoc[0].createTime, newDoc[0]._id);
+                              return callback(null, newDoc.createTime, newDoc._id);
 														}
 													});
 												}
@@ -201,20 +148,20 @@ DocDAO.prototype.createDoc = function(userId, path, type, callback){
 							else{
 								if(type == "dir"){
 									var cTime = new Date().getTime();
-									db.doc.insert({path:path, type:"dir", docs:[], createTime:cTime, modifyTime:cTime}, function(err, newDir){
+									db.doc.insert({path:path, type:"dir", docs:[], createTime:cTime, modifyTime:cTime, projectId:null}, function(err, newDir){
 										if(err){
 											lock.release(rootPath);
 											return callback("inner error");
 										}
 										else{
-											db.doc.update({_id:parentDir._id}, {$push:{docs:newDir[0]._id}}, function(err, reply){
+											db.doc.update({_id:parentDir._id}, {$push:{docs:newDir._id}}, function(err, reply){
 												if(err){
 													lock.release(rootPath);
 													return callback("inner error");
 												}
 												else{
 													lock.release(rootPath);
-													return callback(null, newDir[0].createTime, null);
+													return callback(null, newDir.createTime, null);
 												}
 											});
 										}
@@ -222,20 +169,20 @@ DocDAO.prototype.createDoc = function(userId, path, type, callback){
 								}
 								else{
 									var cTime = new Date().getTime();
-									db.doc.insert({path:path, type:"doc", revisions:[], createTime:cTime, modifyTime:cTime}, function(err, newDoc){
+									db.doc.insert({path:path, type:"doc", revisions:[], createTime:cTime, modifyTime:cTime, projectId:null}, function(err, newDoc){
 										if(err){
 											lock.release(rootPath);
 											return callback("inner error");
 										}
 										else{
-											db.doc.update({_id:parentDir._id}, {$push:{docs:newDoc[0]._id}}, function(err, reply){
+											db.doc.update({_id:parentDir._id}, {$push:{docs:newDoc._id}}, function(err, reply){
 												if(err){
 													lock.release(rootPath);
 													return callback("inner error");
 												}
 												else{
 													db.revision.insert({
-														doc:newDoc[0]._id,
+														doc:newDoc._id,
 														revision:1,
 														createTime:new Date().getTime(),
 														creater:userId,
@@ -248,14 +195,14 @@ DocDAO.prototype.createDoc = function(userId, path, type, callback){
 															return callback("inner error");
 														}
 														else{
-															db.doc.update({_id:newDoc[0]._id}, {$push:{revisions:revision[0]._id}}, function(err, reply){
+															db.doc.update({_id:newDoc._id}, {$push:{revisions:revision._id}}, function(err, reply){
 																if(err){
 																	lock.release(rootPath);
 																	return callback("inner error");
 																}
 																else{
 																	lock.release(rootPath);
-																	return callback(null, newDoc[0].createTime, newDoc[0]._id);
+																	return callback(null, newDoc.createTime, newDoc._id);
 																}
 															});
 														}
@@ -423,10 +370,6 @@ DocDAO.prototype.deleteDoc = function(userId, path, callback){
 				lock.release(rootPath);
 				return callback("doc locked");
 			}
-			else if(rootDir.owner.toString() != userId.toString()){
-				lock.release(rootPath);
-				return callback("unactivated");
-			}
 			else{
 				db.doc.findOne({path:path}, {_id:1}, function(err, doc){
 					if(err){
@@ -437,10 +380,14 @@ DocDAO.prototype.deleteDoc = function(userId, path, callback){
 						lock.release(rootPath);
 						return callback("file doesn't exists");
 					}
+					else if(doc.owner.toString() != userId.toString()){
+						lock.release(rootPath);
+						return callback("unactivated");
+					}
 					else{
 						var pos = path.lastIndexOf("/");
 						var parentPath = path.substring(0, pos);
-						var members = rootDir.members;
+						var members = doc.members;
 
 						if(paths.length == 3){
 							db.user.update({_id:userId}, {$pull:{docs:doc._id}}, function(err, reply){
@@ -823,10 +770,6 @@ DocDAO.prototype.addMember = function(userId, path, memberName, callback){
 	var paths = path.split("/");
 	var rootPath = "/" + paths[1] + "/" + paths[2];
 
-	if(paths.length != 3){
-		return callback("isn't root file");
-	}
-
 	lock.acquire(rootPath, function(){
 		db.user.findOne({_id:userId}, {name:1}, function(err, user){
 			if(err){
@@ -836,10 +779,6 @@ DocDAO.prototype.addMember = function(userId, path, memberName, callback){
 			else if(!user){
 				lock.release(rootPath);
 				return callback("invalid user id");
-			}
-			else if(user.name != paths[1]){
-				lock.release(rootPath);
-				return callback("unauthorized");
 			}
 			else if(user.name == memberName){
 				lock.release(rootPath);
@@ -859,7 +798,7 @@ DocDAO.prototype.addMember = function(userId, path, memberName, callback){
 					lock.release(rootPath);
 					return callback("unauthorized");
 				}
-				db.doc.findOne({path:path}, {_id:1, members:1}, function(err, doc){
+				db.doc.findOne({path:path}, {_id:1, members:1, owner:1}, function(err, doc){
 					if(err){
 						lock.release(rootPath);
 						return callback("inner error");
@@ -867,6 +806,10 @@ DocDAO.prototype.addMember = function(userId, path, memberName, callback){
 					else if(!doc){
 						lock.release(rootPath);
 						return callback("file doesn't exists");
+					}
+					else if(user._id.toString() != doc.owner.toString()){
+						lock.release(rootPath);
+						return callback("unauthorized");
 					}
 					
 					var uId = member._id.toString();
@@ -910,11 +853,7 @@ DocDAO.prototype.removeMember = function(userId, path, memberName, callback){
 	var that = this;
 	var paths = path.split("/");
 	var rootPath = "/" + paths[1] + "/" + paths[2];
-
-	if(paths.length != 3){
-		return callback("isn't root file");
-	}
-
+	
 	lock.acquire(rootPath, function(){
 		db.user.findOne({_id:userId}, {name:1}, function(err, user){
 			if(err){
@@ -925,10 +864,6 @@ DocDAO.prototype.removeMember = function(userId, path, memberName, callback){
 				lock.release(rootPath);
 				return callback("invalid user id");
 			}
-			else if(user.name != paths[1]){
-				lock.release(rootPath);
-				return callback("unauthorized");
-			}
 
 			db.doc.findOne({path:path}, {_id:1}, function(err, doc){
 				if(err){
@@ -938,6 +873,10 @@ DocDAO.prototype.removeMember = function(userId, path, memberName, callback){
 				else if(!doc){
 					lock.release(rootPath);
 					return callback("not found");
+				}
+				else if(user._id != doc.owner){
+					lock.release(rootPath);
+					return callback("unauthorized");
 				}
 				
 				db.user.findOne({name:memberName}, {state:1}, function(err, member){
@@ -975,6 +914,7 @@ DocDAO.prototype.removeMember = function(userId, path, memberName, callback){
 };
 
 DocDAO.prototype.getDocByPath = function(userId, path, callback){
+	//onsole.log(path);
 	var that = this;
 	var trueResult = [];
 	var returnResult;
@@ -984,22 +924,13 @@ DocDAO.prototype.getDocByPath = function(userId, path, callback){
 	var flag = 0;
 	var paths = path.split('/');
 	if (paths.length == 3){
-		//root
+
 		db.doc.findOne({path:path}, {_id:0}, function(err,result){
 			if (err){
 				return callback("inner error",null);
 			}
 			if (!result){
 				return callback("wrong path",null);
-			}
-			for (member in result.members){
-				if (result.members[member].toString() == dId){
-					flag = 1;
-					break;
-				}
-			}
-			if (!flag && (userId.toString() != result.owner.toString())){
-				return callback("unauthorized",null);
 			}
 			if (result.type == "doc"){
 				returnResult = result;
@@ -1083,22 +1014,24 @@ DocDAO.prototype.getDocByPath = function(userId, path, callback){
 			}
 		});
 	}
-	//not root
 	else if (paths.length == 2){
 		var mydocs = [];
 		var userIds = [];
+		var projectName = paths[1];
+		
 		that.innerError = false;
-		db.user.findOne({_id:userId},function(err,user){
-			if (err){
-				return callback("inner error");
-			}
-			if (!user){
-				return callback("unauthorized");
-			}
-			if (user.name != paths[1]){
-				return callback("unauthorized");
-			}
-			db.doc.find({_id:{$in : user.docs}}, {revisions:0,_id:0,docs:0}, function(err,docs){
+		
+		db.project.findOne({
+			name: projectName
+		}, function (err, project){
+			if (err)
+				return callback('inner error');
+			if (!project)
+				return callback('inner error');
+			
+			db.doc.find({
+				projectId: project._id
+			}, function (err, docs){
 				if (err){
 					return callback("inner error");
 				}
@@ -1146,20 +1079,12 @@ DocDAO.prototype.getDocByPath = function(userId, path, callback){
 			if (!result){
 				return callback("wrong path",null);
 			}
-			for (member in result.members){
-				if (result.members[member].toString() == dId){
-					flag = 1;
-					break;
-				}
-			}
+
 			userIds.push(result.owner);
 			for (id in result.members){
 				userIds.push(result.members[id]);
 			}
-			if (!flag && (userId.toString() != result.owner.toString())){
-				return callback("unauthorized",null);
-			}
-			/////////////
+
 			db.doc.findOne({path:path}, {_id:0}, function(err,mydoc){
 				if (err){
 					return callback("inner error");
@@ -1234,9 +1159,6 @@ DocDAO.prototype.setPermission = function(userId, path, permission, callback){
 	var rootPath = "/" + paths[1] + "/" + paths[2];
 	var dId = userId.toString();
 	var flag = 0;
-	if (paths.length != 3){
-		return callback("unauthorized");
-	}
 
 	lock.acquire(rootPath, function(){
 		db.doc.findOne({path:path},function(err,result){
@@ -1248,29 +1170,30 @@ DocDAO.prototype.setPermission = function(userId, path, permission, callback){
 				lock.release(rootPath);
 				return callback("unauthorized");
 			}
-			for (i in result.members){
-				if (result.members[i].toString() == dId){
-					flag = 1;
-					break;
-				}
-			}
-			if (flag == 0  && (userId.toString() != result.owner.toString())){
-				lock.release(rootPath);
-				return callback("unauthorized");
-			}
-			db.doc.update({_id:result._id},{
-				$set:{
-					permission:permission
-				}
-				},function(err,result){
-					if (err){
-						lock.release(rootPath);
-						return callback("inner error");				
-					}
+			
+			that = this;
+			that.isMember(userId, path, function (err, flag){
+				if (err){
 					lock.release(rootPath);
-					return callback(null);
-				}	
-			);
+					return callback(err);
+				}
+				if (!flag){
+					lock.release(rootPath);
+					return callback("unauthorized");
+				}
+				db.doc.update({_id:result._id},{
+					$set:{
+						permission:permission
+					}},function(err,result){
+						if (err){
+							lock.release(rootPath);
+							return callback("inner error");				
+						}
+						lock.release(rootPath);
+						return callback(null);
+					}	
+				);
+			});
 		});
 	});
 };
@@ -1281,52 +1204,35 @@ DocDAO.prototype.getRevision = function(userId, path, revision, obj, callback){
 	var rootPath = "/" + paths[1] + "/" + paths[2];
 	var flag = 0;
 	var dId = userId.toString();
-	db.doc.findOne({path:rootPath}, {_id:0}, function(err,rootDoc){
+	db.doc.findOne({path:path},function(err, result){
 		if (err){
 			return callback("inner error");
 		}
-		if (!rootDoc){
+		if (!result){
 			return callback("unauthorized");
 		}
-		for (i in rootDoc.members){
-			if (dId == rootDoc.members[i].toString()){
-				flag = 1;
-				break;
-			}
+		if (result.type == "dir"){
+			return callback("DIR!!");
 		}
-		if (flag == 0 && (userId.toString() != rootDoc.owner.toString())){
-			return callback("unauthorized");
+		visionLength = result.revisions.length;
+		if (visionLength < revision){
+			return callback("out of bound");
 		}
-		db.doc.findOne({path:path},function(err, result){
+		var versionId;
+		if (revision == 0){
+			versionId = result.revisions[visionLength-1];
+		}
+		else{
+			versionId = result.revisions[revision-1];
+		}
+		db.revision.findOne({_id:versionId}, {_id:0}, function(err,result){
 			if (err){
 				return callback("inner error");
 			}
-			if (!result){
+			else if (!result){
 				return callback("unauthorized");
 			}
-			if (result.type == "dir"){
-				return callback("DIR!!");
-			}
-			visionLength = result.revisions.length;
-			if (visionLength < revision){
-				return callback("out of bound");
-			}
-			var versionId;
-			if (revision == 0){
-				versionId = result.revisions[visionLength-1];
-			}
-			else{
-				versionId = result.revisions[revision-1];
-			}
-			db.revision.findOne({_id:versionId}, {_id:0}, function(err,result){
-				if (err){
-					return callback("inner error");
-				}
-				else if (!result){
-					return callback("unauthorized");
-				}
-				return callback(null,result,obj);
-			});
+			return callback(null,result,obj);
 		});
 	});
 };
@@ -1345,63 +1251,62 @@ DocDAO.prototype.commit = function(userId, path, content, callback){
 		if (!myDoc){
 			return callback("invalid");
 		}
-		for (i in myDoc.members){
-			if (dId == myDoc.members[i].toString()){
-				flag = 1;
-				break;
-			}
-		}
-		if (!flag && (userId.toString() != myDoc.owner.toString())){
-			return callback("unauthorized");
-		}
-		db.doc.findOne({path:path},function(err,result){
-			if (err){
-				return callback("inner error");
-			}
-			if (!result){
-				return callback("unauthorized");
-			}
-			if (result.type == "dir"){
-				return callback("dir!!");
-			}
-			docValue = result;
-			revisionDocId = result._id;
-			revisionLength = result.revisions.length + 1;
-			db.revision.insert({
-				doc:revisionDocId,
-				revision:revisionLength,
-				createTime:new Date().getTime(),
-				creater:userId,
-				modifyTime:new Date().getTime(),
-				modifier:userId,
-				content:content
-				},
-				function(err,revision){
-					if (err){
-						return callback("inner error");
-					}
-					db.doc.update({_id:result._id},{
-						$push:{revisions:revision[0]._id}
-						},
-						function(err,result){
-							if (err){
-								return callback("inner error");
-							}
-							else{
-								var mTime = new Date().getTime();
-								that._modifyTime(path + "/.", mTime, callback);
-							}
-						}
-					);
+		
+		that = this;
+		that.isMember(userId, path, function (err, flag){
+			if (err)
+				return callback(err);
+			if (!flag)
+				return callback('unauthorized');
+			db.doc.findOne({path:path},function(err,result){
+				if (err){
+					return callback("inner error");
 				}
-			);
+				if (!result){
+					return callback("unauthorized");
+				}
+				if (result.type == "dir"){
+					return callback("dir!!");
+				}
+				docValue = result;
+				revisionDocId = result._id;
+				revisionLength = result.revisions.length + 1;
+				db.revision.insert({
+					doc:revisionDocId,
+					revision:revisionLength,
+					createTime:new Date().getTime(),
+					creater:userId,
+					modifyTime:new Date().getTime(),
+					modifier:userId,
+					content:content
+					},
+					function(err,revision){
+						if (err){
+							return callback("inner error");
+						}
+						db.doc.update({_id:result._id},{
+							$push:{revisions:revision._id}
+							},
+							function(err,result){
+								if (err){
+									return callback("inner error");
+								}
+								else{
+									var mTime = new Date().getTime();
+									that._modifyTime(path + "/.", mTime, callback);
+								}
+							}
+						);
+					}
+				);
+			});
 		});
 	});
 };
 
 
 DocDAO.prototype.save = function(userId, docId, content, callback){
-	var that = this;
+	that = this;
 	var revisionID;
 	var flag = 0;
 	var dId = userId.toString();
@@ -1418,25 +1323,12 @@ DocDAO.prototype.save = function(userId, docId, content, callback){
 		var paths = myDoc.path.split('/');
 		var rootpath = '/' + paths[1] + '/' + paths[2];
 		lock.acquire(rootpath, function(){
-			db.doc.findOne({path:rootpath},function(err,rootDoc){
-				if (err){
-					lock.release(rootpath);
-					return callback("inner error");
-				}
-				if (!rootDoc){
-					lock.release(rootpath);
-					return callback("invalid");
-				}
-				for (i in rootDoc.members){
-					if (dId == rootDoc.members[i].toString()){
-						flag = 1;
-						break;
-					}
-				}
-				if (!flag && (userId.toString() != rootDoc.owner.toString())){
-					lock.release(rootpath);
-					return callback("unauthorized");
-				}
+			console.log(that);
+			that.isMember(userId, myDoc.path, function (err, flag){
+				if (err)
+					return callback(err);
+				if (!flag)
+					return callback('unauthorized');
 				revisionID = myDoc.revisions[myDoc.revisions.length - 1];
 				db.revision.update({_id:revisionID},{
 					$set:{
@@ -1457,40 +1349,68 @@ DocDAO.prototype.save = function(userId, docId, content, callback){
 			});
 		});
 	});
+};
 
+DocDAO.prototype.isMember = function (userId, path, callback){
+	var paths = path.split('/');
+	if (paths.length == 2)
+		return callback(null, false);
+	
+	db.doc.findOne({
+		path: path
+	}, function (err, doc){
+		if (err)
+			return callback('inner error');
+		if (!doc)
+			return callback('inner error');
+		
+		var flag = false;
+		for (i in doc.members)
+			if (doc.members[i].toString() == userId.toString()){
+				flag = true;
+				break;
+			}
+		if (flag || doc.owner.toString() == userId.toString())
+			return callback(null, true);
+		var newPath = path.substring(0, path.lastIndexOf('/'));
+		that.isMember(userId, newPath, callback);
+	});
 };
 
 DocDAO.prototype.findOwner = function(docId, callback){
-    db.doc.findOne({_id:docId},function(err,myDoc){
-        if (err){
-            return callback("inner error");
-        }
-        if (!myDoc)
-            return callback("unauthorized");
-        return callback(err, myDoc);
-    });
+    db.doc.findOne({
+		_id:docId
+	},function(err,myDoc){
+		if (err){
+			return callback("inner error");
+		}
+		if (!myDoc)
+			return callback("unauthorized");
+		return callback(err, myDoc);
+	});
 };
 
 DocDAO.prototype.findContent = function(docId, callback){
-    db.revision.findOne({doc:docId},function(err,myDoc){
-        if (err){
-            return callback("inner error");
-        }
-        if (!myDoc)
-            return callback("unauthorized");
-        return callback(err, myDoc);
-    });
+    db.revision.findOne({
+		doc:docId
+	},function(err,myDoc){
+		if (err){
+			return callback("inner error");
+		}
+		if (!myDoc)
+			return callback("unauthorized");
+		return callback(err, myDoc);
+	});
 };
 
 DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 	var paths = path.split('/');
 	var rootpath = '/' + paths[1] + '/' + paths[2];
 	
-	if (paths.length != 3)
-		return callback("isn't root file");
-	
 	lock.acquire(rootpath, function(){
-		db.user.findOne({_id:userId}, function (err, user){
+		db.user.findOne({
+			_id:userId
+		}, function (err, user){
 			if (err){
 				lock.release(rootpath);
 				return callback("inner error");
@@ -1499,16 +1419,14 @@ DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 				lock.release(rootpath);
 				return callback('invalid user');
 			}
-			if (user.name != paths[1]){
-				lock.release(rootpath);
-				return callback('unauthorized');
-			}
 			if (user.name == name) {
 				lock.release(rootpath);
 				return callback('can not be yourself');
 			}
 			
-			db.user.findOne({name:name}, function(err, member){
+			db.user.findOne({
+				name:name
+			}, function(err, member){
 				if (err){
 					lock.release(rootpath);
 					return callback("inner error");
@@ -1521,7 +1439,9 @@ DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 					lock.release(rootpath);
 					return callback('unauthorized');
 				}
-				db.doc.findOne({path:path}, function(err, doc){
+				db.doc.findOne({
+					path:path
+				}, function(err, doc){
 					if (err){
 						lock.release(rootpath);
 						return callback("inner error");
@@ -1530,8 +1450,11 @@ DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 						lock.release(rootpath);
 						return callback('invalid doc');
 					}
+					if (user._id.toString() != doc.owner.toString()){
+						lock.release(rootpath);
+						return callback('unauthorized');
+					}
 					
-					var newPath = '/' + member.name + '/' + paths[2];
 					var members = doc.members;
 					for (var i in doc.members){
 						if (doc.members[i].toString() == member._id.toString()){
@@ -1539,7 +1462,14 @@ DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 							break;
 						}
 					}
-					db.doc.update({_id:doc._id}, {$set:{members:members, path:newPath, owner:member._id}}, function(err){
+					db.doc.update({
+						_id:doc._id
+					}, {
+						$set:{
+							members:members, 
+							owner:member._id
+						}
+					}, function(err){
 						if (err){
 							lock.release(rootpath);
 							return callback("inner error");
@@ -1552,7 +1482,13 @@ DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 							docs.splice(i ,1);
 							break;
 						}
-					db.user.update({_id:user._id}, {$set:{docs:docs}}, function(err){
+					db.user.update({
+						_id:user._id
+					}, {
+						$set:{
+							docs:docs
+						}
+					}, function(err){
 						if (err){
 							lock.release(rootpath);
 							return callback("inner error");
@@ -1566,13 +1502,21 @@ DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 							break;
 						}
 					docs.push(doc._id);
-					db.user.update({_id:member._id}, {$set:{docs:docs}}, function(err){
+					db.user.update({
+						_id:member._id
+					}, {
+						$set:{
+							docs:docs
+						}
+					}, function(err){
 						if (err){
 							lock.release(rootpath);
 							return callback("inner error");
 						}
 					});
-					db.doc.findOne({_id:doc._id}, function (err, fuckDoc){
+					db.doc.findOne({
+						_id:doc._id
+					}, function (err, fuckDoc){
 						if (err){
 							lock.release(rootpath);
 							return callback("inner error");
@@ -1585,138 +1529,31 @@ DocDAO.prototype.changeOwner = function(userId, path, name, callback){
 	});
 };
 
-DocDAO.prototype.updateRecord = function (userId, docId, modifyTime, result, callback){
-	
-	db.record.findOne({userId:userId, docId:docId, type:{$in : ["modify", "transfer"]}}, {sort:{$natural:-1}}, function (err, record){
+DocDAO.prototype.getPermission = function (userId, docId, callback){
+	db.doc.findOne({
+		_id: docId
+	}, function (err, doc){
 		if (err)
 			return callback('inner error');
-		if (result.codeLength == 0 && result.commentNum == 0)
-			return callback(err);
-		if (!record){
-			db.record.insert({userId:userId, toUserId:null, docId:docId, modifyTime: modifyTime, modifyCode: result.codeLength, 
-				modifyComment: result.commentNum, codeLength: result.codeLength, commentNum: result.commentNum, type:"modify"}, function (err){
-				if (err)
-					return callback('inner error');
-			});
-		}
-		else{
-			var modifyCode = result.codeLength - record.codeLength;
-			var modifyComment = result.commentNum - record.commentNum;
-			
-			if (modifyCode == 0 && modifyComment == 0)
+		if (!doc)
+			return callback('invalid doc');
+		if (doc.owner.toString() == userId.toString())
+			return callback(null, {isOwner : true});
+		that = this;
+		that.isMember(userId, doc.path, function (err, flag){
+			if (err)
 				return callback(err);
-			
-			db.record.insert({userId:userId, toUserId:null, docId:docId,  modifyTime: modifyTime, modifyCode: modifyCode, 
-				modifyComment: modifyComment, codeLength: result.codeLength, commentNum: result.commentNum, type:"modify"}, function (err){
-				if (err)
-					return callback('inner error');
-			});
-		}
-	});
-};
-
-DocDAO.prototype.getTimelineData = function (myDoc, callback){
-	//console.log(myDoc);
-	var that = this;
-	db.record.find({docId:myDoc._id}, function(err, records){
-		if (err)
-			return callback('inner error');
-		
-		var result = {};
-		var timeline = {};
-		var date = new Array(records.length);
-		
-		if (!records || records.length == 0)
-			return callback(err, result);
-
-		that.setNames(records.length - 1, date, records, function(err, date){
-			if (err)
-				return callback('inner error');
-			
-			//console.log(date);
-			var result = {};
-			var timeline = {};
-			var codeLength = 0, commentNum = 0;
-			var path = myDoc.path;
-			var paths = path.split('/');
-			var docName = paths[paths.length - 1];
-			var modifyTime = 0;
-			
-			for (var i in records){
-				commentNum += records[i].modifyComment;
-				if (records[i].userId.toString() == myDoc.owner.toString() && records[i].type != "share")
-					codeLength = records[i].codeLength;
-				if (records[i].type == "modify")
-					modifyTime ++;
-			}
-
-			timeline.headline = docName;
-			timeline.type = "default";
-			timeline.text = "Modified " + modifyTime+ " times. " + codeLength + " codes, " + commentNum + " comments.";
-			timeline.startDate = records[records.length - 1].modifyTime;
-			timeline.date = date;
-			
-			result.timeline = timeline;
-			
-			//console.log(result);
-			
-			return callback(err, result);
+			return callback(null, {isOwner : false, isMember : flag});
 		});
 	});
 };
 
-DocDAO.prototype.createDocRecord = function (userId, docId, modifyTime, callback){
-	//console.log("create");
-	db.record.insert({userId:userId, toUserId:null, docId:docId,  modifyTime: modifyTime, modifyCode: 0, 
-		modifyComment: 0, codeLength: 0, commentNum: 0, type:"create"}, function (err){
+DocDAO.prototype.getDocs = function (projectId, callback){
+	db.doc.find({
+		projectId : projectId
+	}, function (err, docs){
 		if (err)
 			return callback('inner error');
-		callback(err);
-	});
-};
-
-DocDAO.prototype.transferDocRecord = function (userId, toUserId, docId, modifyTime, callback){
-	//console.log("test");
-	db.record.findOne({userId:userId, docId:docId, type:{$in:["modify", "transfer"]}}, {sort:{$natural:-1}}, function (err, record){
-		if (err)
-			return callback("inner error");
-			
-		var modifyCode;
-		
-		if (!record)
-			modifyCode = 0;
-		else
-			modifyCode = - record.codeLength;
-		
-		db.record.insert({userId:userId, toUserId:toUserId, docId:docId,  modifyTime: modifyTime, modifyCode: modifyCode, 
-			modifyComment: 0, codeLength: 0, commentNum: record.commentNum, type:"transfer"}, function (err){
-			if (err)
-				return callback('inner error');
-			db.record.findOne({userId:toUserId, docId:docId}, {sort : {$natural: -1}}, function (err, record2){
-				if (err)
-					return callback('inner error');
-					
-				var commentNum = 0;
-				if (record2)
-					commentNum = record2.commentNum;
-					
-				db.record.insert({userId:toUserId, toUserId:null, docId:docId, modifyTime:modifyTime, modifyCode: -modifyCode,
-					modifyComment:0, codeLength: -modifyCode, commentNum: commentNum, type:"modify"}, function (err){
-					
-					if (err)
-						return callback('inner error');
-					callback(null);
-				});
-			});
-		});
-	});
-};
-
-DocDAO.prototype.shareDocRecord = function (userId, toUserId, docId, modifyTime, callback){
-	db.record.insert({userId:userId, toUserId:toUserId, docId:docId,  modifyTime: modifyTime, modifyCode: 0, 
-		modifyComment: 0, codeLength: 0, commentNum: 0, type:"share"}, function (err){
-		if (err)
-			return callback('inner error');
-		callback(err);
+		callback(null, docs);
 	});
 };

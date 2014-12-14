@@ -4,10 +4,11 @@ var app = app || {};
     'use strict';
     app.FilesView = Backbone.View.extend({
         el: '#filecontrol',
-        go: function (dir) {
+        show: function (dir) {
             var name = app.currentUser.name,
-			mode = (dir.substring(1, 8 + name.length) == 'shared@' + name) ? app.FilesView.Mode.Shared : app.FilesView.Mode.BelongSelf;
-            dir = app.File.decode(dir);
+//			mode = (dir.substring(1, 8 + name.length) == 'shared@' + name) ? app.FilesView.Mode.Shared : app.FilesView.Mode.BelongSelf;
+            mode = app.FilesView.Mode.BelongSelf;
+            //dir = app.File.decode(dir);
             if (!dir) {
                 return;
             }
@@ -16,11 +17,17 @@ var app = app || {};
                 path: dir,
                 loading: this.$noFile,
                 mode: mode,
-                success: (mode == this.mode) ? null : function () {
-                    that.renewList(null, { mode: mode });
-                },
+//                success: (mode == this.mode) ? null : function () {
+//                    that.renewList(null, { mode: mode });
+//                },
+                success:null,
             });
         },
+
+        setPath: function (path) {
+            this.path = "/" + path;
+        },
+
         initialize: function (opt) {
             var el = this.$el;
             this.$tableHeadCol3 = el.find('table .head .col3');
@@ -46,7 +53,8 @@ var app = app || {};
         },
         afterSync: function (m, d, opts) {
             opts && opts.mode && (this.mode = opts.mode);
-            this.shownPath = app.File.encode(this.collection.path, this.mode == app.FilesView.Mode.Shared);
+//            this.shownPath = app.File.encode(this.collection.path, this.mode == app.FilesView.Mode.Shared);
+            this.shownPath = this.collection.path;
             this.render();
         },
         addOne: function (model) {
@@ -85,21 +93,18 @@ var app = app || {};
 			mode = (opts.mode || this.mode),
 			isMine = (mode == app.FilesView.Mode.BelongSelf);
             _.each(this.collection.models, function (model) {
-			    if (isMine == model.json.belongSelf) {
-			        if (model.view) {
-			            model.view.$el.show();
-			        } else {
-			            model.view = new this.ItemView({ model: model });
-			            els.push(model.view.render().el);
-			        }
-			    } else {
-			        model.view && (model.view.$el.hide());
-			    }
+                if (model.view) {
+                    model.view.$el.show();
+                } else {
+                    model.view = new this.ItemView({ model: model });
+                    els.push(model.view.render().el);
+                }
 			}, this);
-            this.$table.append(els);
+            this.$table.empty().append(els);
             return this;
         },
         render: function (opts) {
+
             var mode = (opts && opts.mode) || this.mode;
             if (mode == app.FilesView.Mode.BelongSelf) {
                 this.$tableHeadCol3.removeClass('owner').html(strings['state']);
@@ -120,7 +125,7 @@ var app = app || {};
             else {
                 this.$noFile.hide();
             }
-            var s0 = this.shownPath,
+            var s0 = this.shownPath || "",
 			s1 = '',
 			s2 = '',
 			arr = s0.split('/');
@@ -133,8 +138,9 @@ var app = app || {};
             this.$dir.html(s1);
             return this;
         },
-		afterLogin: function() {
-			this.$tabOwnedEx.find('a.file-go').attr('href', '#index/' + app.currentUser.name);
+        //
+		afterIntoProject: function(projectName) {
+			this.$tabOwnedEx.find('a.file-go').attr('href', '#index/' + projectName);
 			this.$tabShared.find('a.file-go').attr('href', '#index/shared@' + app.currentUser.name);
 		}
     },
@@ -250,7 +256,7 @@ var app = app || {};
 			var name = Backbone.$.trim(modal.find('#newfile-input').val());
 			that.collection.create({
 				type: type,
-				path: that.collection.path + '/' + name
+				path: that.path + '/' + name
 			}, {
 				loading: modal.find('.modal-buttons'),
 				error: function (m, data) {
@@ -261,7 +267,7 @@ var app = app || {};
 					if (type == 'dir') {
 						app.showMessageBox('newfolder', 'createfoldersuccess');
 					} else {
-						app.showMessageBox('newfile', 'createfilesuccess');
+                        app.showMessageBox('newfile', 'createfilesuccess');
 					}
 				},
 			});

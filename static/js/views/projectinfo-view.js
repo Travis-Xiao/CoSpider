@@ -1,0 +1,117 @@
+/**
+ * Created by Travis on 2014/12/04.
+ */
+var app = app || {};
+(function () {
+    'use strict';
+    app.ProjectInfoView = Backbone.View.extend({
+        tagName: 'th',
+        className: 'project-item',
+        template: _.template($('#project-template').html(), null, {
+            variable: 'model'
+        }),
+        events: {
+            'click .info-confirm': 'confirm',
+            'click .project-cover': 'intoProject',
+            'mouseover .project-cover': 'showIntroduction',
+        },
+        initialize: function (opt) {
+            var el = this.$el;
+            opt || (opt = {});
+            if (opt.noinit) {
+                return this;
+            }
+
+            this.listenTo(this.model, 'change', this.render);
+            this.listenTo(this.model, 'remove', this.remove);
+            this.listenTo(this.model, 'destroy', this.remove);
+        },
+
+        intoProject: function () {
+            if (this.model.get('notnew') == false) {
+                this.createProject();
+            } else {
+                app.socket.emit('into-project', {
+                    name: this.model.get('name'),
+                });
+            }
+        },
+
+        createProject: function(){
+            var newpro = {};
+            var that = app.views['projects'];
+            var modal = Backbone.$('#newproject');
+            $('#newproject-name').focus();
+            app.showInputModal(modal);
+            var input = modal.find('.modal-input'),
+                cnfm = modal.find('.modal-confirm');
+            modal.on('hide', function () {
+                input.off('input');
+                cnfm.off('click');
+                modal.off('hide');
+            });
+            input.on('input', function () {
+                var name = Backbone.$.trim(input.val()),
+                    err = false;
+                if (!name) {
+                    err = 'inputprojectname';
+                }
+                if (app.fileNameReg.test(name)) {
+                    err = 'projectnameinvalid';
+                }
+                if (name.length > 32) {
+                    err = 'projectnamelength';
+                }
+                if (err) {
+                    if (name) {
+                        app.showMessageInDialog(modal, err);
+                    }
+                    cnfm.attr('disabled', 'disabled');
+                } else {
+                    modal.find('.help-inline').text('');
+                    modal.find('.form-group').removeClass('error');
+                    cnfm.removeAttr('disabled');
+                }
+            });
+            cnfm.attr('disabled', 'disabled').on('click', function () {
+                if (cnfm.attr('disabled') !== undefined) {
+                    return;
+                }
+                var name = Backbone.$.trim(modal.find('#newproject-name').val());
+                var info = Backbone.$.trim(modal.find('#newproject-info').val());
+                newpro = {
+                    name: name,
+                    introduction: info,
+                    notnew: true
+                };
+                that.collection.create(newpro,{
+                    wait:true,
+                    success:function(){
+                        modal.modal('hide');
+                        app.showMessageBox('newfile', 'createprojectsuccess');
+                    },
+                    error: function (m, data) {
+                        app.showMessageInDialog(modal, data.err);
+                    },
+                });
+            });
+        },
+
+        showIntroduction: function () {
+
+        },
+
+        confirm: function() {
+            console.log("confirm");
+        },
+
+        render: function () {
+            this.$el.html(this.template(this.model.attributes));
+            return this;
+        },
+
+        remove: function () {
+            return this;
+        },
+    });
+})();
